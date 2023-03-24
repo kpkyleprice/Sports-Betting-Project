@@ -1,0 +1,14 @@
+.navbar {
+    padding-left: 50px;
+}
+.row {
+  padding-top: 20px;
+}
+.NGU {
+  display: flex;
+  justify-content: center;
+}
+.FB {
+  display: flex;
+  justify-content: center;
+}

@@ -1,14 +1,280 @@
+html * {
+  margin: 0;
+}
 .navbar {
-    padding-left: 50px;
+    padding-left: 20px;
+}
+#logo {
+  width: 60px;
+  height: 50px;
+  padding-right: 20px;
+}
+.Slides {
+  text-decoration: none;
+  color:white;
+}
+.Slides:hover {
+  color: rgba(148, 228, 255);
 }
 .row {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 .NGU {
   display: flex;
   justify-content: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-.FB {
+#info0 >h2 {
+  display:flex;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#info0 >ul {
+  display:flex;
+  justify-content: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#info1 >h2 {
+  display:flex;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#info1 >ul {
+  display:flex;
+  justify-content: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#info2 >h2 {
+  display:flex;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#info2 >ul {
+  display:flex;
+  justify-content: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#info3 >h2 {
+  display:flex;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#info3 >ul {
+  display:flex;
+  justify-content: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#info4 >h2 {
+  display:flex;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#info4 >ul {
+  display:flex;
+  justify-content: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#info5 >h2 {
+  display:flex;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#info5 >ul {
+  display:flex;
+  justify-content: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.League {
   display: flex;
   justify-content: center;
+  font-size: 50px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  padding-top: 10px;
+}
+/* home page carousel */
+.carousel {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+  flex-shrink: 0;
+  width: 100%;
+}
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+.carousel-indicators .active {
+  background-color: #333;
+}
+.carousel-caption {
+  background-color: rgb(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 70px;
+  font-weight: bold;
+  width: max-content;
+}
+.Box1 {
+  height:100%;
+  width: 100%;
+  max-width:100%;
+  max-height:100%;
+  padding-left: 10px;
+  position: relative;
+  display: inline-block;
+}
+.Box2 {
+  height:100%;
+  width: 100%;
+  max-width:100%;
+  max-height:100%;
+  position: relative;
+  display: inline-block;
+}
+.Box3 {
+  height:100%;
+  width: 100%;
+  max-width:100%;
+  max-height:100%;
+  position: relative;
+  display: inline-block;
+}
+.Box1:hover {
+  transform: scale(1.05);
+}
+.Box2:hover {
+  transform: scale(1.05);
+}
+.Box3:hover {
+  transform: scale(1.05);
+}
+.text-top-left {
+  position: absolute;
+  top: 0;
+  left: 1;
+  background-color: rgb(0, 0, 0, .35);
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  width: 40%;
+}
+
+.text-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 5;
+  background-color: rgb(0, 0, 0, .7);
+  color: white;
+  font-size: 14px;
+}
+.Lowbox1 {
+  height:100%;
+  width: 100%;
+  max-width:100%;
+  max-height:100%;
+  padding-left: 10px;
+  position: relative;
+  display: inline-block;
+}
+.Lowbox2 {
+  height:100%;
+  width: 100%;
+  max-width:100%;
+  max-height:100%;
+  padding-left: 10px;
+  position: relative;
+  display: inline-block;
+}
+.Lowbox1:hover {
+  transform: scale(1.05);
+}
+.Lowbox2:hover {
+  transform: scale(1.05);
+}
+.WhySU {
+  display: flex;
+  justify-content: center;
+}
+/* footer */
+#footlogo {
+  width: 40px;
+  height: 50px;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link :hover {
+  color: rgba(148, 228, 255);
+}
+.socials {
+  display: flex;
+  justify-content: space-around;
+  font-size: larger;
+}
+.AD {
+  background: url(../Images/ad.jpg);
+  width: min-content;
+  height: 120px;
+}
+.mission {
+  display: flex;
+  justify-content: center;
+}
+.statement {
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+  padding-left: 80px;
+}
+h2 {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Show the h2 when the user scrolls down */
+h2.visible {
+  opacity: 1;
+}
+#header {
+  padding-bottom: 8px;
 }

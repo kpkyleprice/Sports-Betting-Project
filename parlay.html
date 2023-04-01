@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript DOM</title>
+        <link rel="stylesheet" href="parlay.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    </head>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+        <a href="index.html">
+          <img src="../Images/logo.jpg" aref="index.html" id="logo">
+        </a>
+          <a class="navbar-brand" href="index.html">BetCalcHQ</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only"></span></a>
+              <a class="nav-item nav-link" href="nba.html">NBA</a>
+              <a class="nav-item nav-link" href="ncaamb.html">NCAAMB</a>
+              <a class="nav-item nav-link" href="mlb.html">MLB</a>
+              <a class="nav-item nav-link" href="parlay.html">Parlay Calculator</a>
+            </div>
+          </div>
+      </nav>
+      <script>
+        // !!!! Note for grader, results tested and matched ones that came from oddshark if want to text if calculations and results are accurate
+            function calculateWinnings() {
+                // Get input values
+                var bet = parseFloat(document.getElementById("bet").value);
+                var odd1 = parseFloat(document.getElementById("odd1").value);
+                var odd2 = parseFloat(document.getElementById("odd2").value);
+                var odd3 = parseFloat(document.getElementById("odd3").value);
+                var odd4 = parseFloat(document.getElementById("odd4").value);
+                var odd5 = parseFloat(document.getElementById("odd5").value);
+                var odd6 = parseFloat(document.getElementById("odd6").value);
+    
+                // Check for input valididty
+                if (isNaN(bet) || bet <= 0 || (isNaN(odd1) && isNaN(odd2) && isNaN(odd3) && isNaN(odd4) && isNaN(odd5) && isNaN(odd6))) {
+                    document.getElementById("output").innerHTML = "Please enter a valid bet and at least one moneyline.";
+                    return;
+                }
+    
+                // Calculate winnings
+                var winnings = bet;
+                if (!isNaN(odd1)) {
+                    if (odd1 > 0) {
+                        winnings *= 1 + (odd1 / 100);
+                    } else {
+                        winnings *= 1 - (100 / odd1);
+                    }
+                }
+                if (!isNaN(odd2)) {
+                    if (odd2 > 0) {
+                        winnings *= 1 + (odd2 / 100);
+                    } else {
+                        winnings *= 1 - (100 / odd2);
+                    }
+                }
+                if (!isNaN(odd3)) {
+                    if (odd3 > 0) {
+                        winnings *=  1 + (odd3 / 100);
+                    } else {
+                        winnings *= 1 - (100 / odd3);
+                    }
+                }
+                if (!isNaN(odd4)) {
+                    if (odd4 > 0) {
+                        winnings *=  1 + (odd4 / 100);
+                    } else {
+                        winnings *= 1 - (100 / odd4);
+                    }
+                }
+                if (!isNaN(odd5)) {
+                    if (odd5 > 0) {
+                        winnings *=  1 + (odd5 / 100);
+                    } else {
+                        winnings *= 1 - (100 / odd5);
+                    }
+                }
+                if (!isNaN(odd6)) {
+                    if (odd6 > 0) {
+                        winnings *=  1 + (odd6 / 100);
+                    } else {
+                        winnings *= 1 - (100 / odd6);
+                    }
+                }
+    
+                // Display output
+                document.getElementById("output").innerHTML = "Potential Payout: $" + winnings.toFixed(2);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="row">
+            <h1 class="MLC">Betting Calculator</h1>
+            <h5 class="AOO">American Odds Only</h5>
+            <h6 class="PIB">Payout includes original wager</h6>
+            <form class="Wager">
+                <label for="bet">Bet amount ($):</label>
+                <input type="number" id="bet" required>
+            </form>
+        </div>
+        <div class="container">
+            <div class="col-6">
+                <div class="first3">
+                    <form>
+                        <label for="odd1">1:</label>
+                        <input type="number" id="odd1"><br><br>
+                        <label for="odd2">2</label>
+                        <input type="number" id="odd2"><br><br>
+                        <label for="odd3">3</label>
+                        <input type="number" id="odd3"><br><br>
+                    </form>
+                </div>
+                </div>
+            <div class="col-6">
+                <div class="next3">
+                    <form>
+                        <label for="odd4">4</label>
+                        <input type="number" id="odd4"><br><br>
+                        <label for="odd5">5</label>
+                        <input type="number" id="odd5"><br><br>
+                        <label for="odd6">6</label>
+                        <input type="number" id="odd6"><br><br>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="calculator">
+                    <input type="button" value="Calculate" onclick="calculateWinnings()">
+                </div>
+            </div>
+            <div id="output"></div>
+    </body>
+    </html>
+

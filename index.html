@@ -6,34 +6,198 @@
     <title>JavaScript DOM</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">SpreadQuarters</a>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+  <a href="index.html">
+    <img src="../Images/logo.jpg" aref="index.html" id="logo">
+  </a>
+    <a class="navbar-brand" href="index.html">BetCalcHQ</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only"></span></a>
-        <a class="nav-item nav-link" href="#">NBA</a>
-        <a class="nav-item nav-link" href="#">NCAAMB</a>
-        <a class="nav-item nav-link" href="#">MLB</a>
-        <a class="nav-item nav-link" href="#">Parlay Calculator</a>
+        <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only"></span></a>
+        <a class="nav-item nav-link" href="nba.html">NBA</a>
+        <a class="nav-item nav-link" href="ncaamb.html">NCAAMB</a>
+        <a class="nav-item nav-link" href="mlb.html">MLB</a>
+        <a class="nav-item nav-link" href="parlay.html">Parlay Calculator</a>
       </div>
     </div>
 </nav>
-  </nav>
 <body>
-    <div class="row">
-        <div class="col-6">
-            <h1 class="NGU">Next Game Up</h1>
-            <div id="info"></div>
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../Images/FAU.jpg" alt="Slide 1">
+        <div class="carousel-caption">
+          <a class="Slides" href="#">
+            FAU Final Four Preview
+          </a>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../Images/Uconn.jpg" alt="Slide 2">
+        <div class="carousel-caption">
+          <a class="Slides" href="#">
+            Can UCONN be Stopped?
+          </a>
         </div>
-        <div class="col-6">
-            <h1 class="FB">Followed By</h1>
-            <div id="parlay"></div>
+      </div>
+      <div class="carousel-item">
+        <img src="../Images/Warriors.jpg" alt="Slide 3">
+        <div class="carousel-caption">
+          <a class="Slides" href="#">
+            Warriors Surging at Right Time
+          </a>
         </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../Images/WS.jpg" alt="Slide 4">
+        <div class="carousel-caption">
+          <a class="Slides" href="#">
+            World Series Odds Preview
+          </a>
+        </div>
+      </div>
     </div>
+    <ol class="carousel-indicators">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+  </div>  
+  <!-- <div class="row">
+    <div class="AD">
+    </div>
+    </div> -->
+  <div class="row">
+    <div class="col-4">
+      <div class="Box1">
+        <a href="#">
+        <img src="../Images/Box1.jpg">
+        </a>
+        <div class="text-top-left">NFL Biggest Free Agency Signings</div>
+  <div class="text-bottom-right">By Mike Mikerson</div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="Box2">
+        <a href="#">
+        <img src="../Images/Box2.jpg">
+        </a>
+        <div class="text-top-left">Caitlin Clark makes History</div>
+  <div class="text-bottom-right">By Tony Longface</div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="Box3">
+        <a href="#">
+        <img src="../Images/Box3.jpg">
+        </a>
+        <div class="text-top-left">Garcia Vs Davis Preview</div>
+  <div class="text-bottom-right">By Savannah Shields</div>
+      </div>
+    </div>
+  </div> 
+  <div class="row">
+    <div class="col-6">
+      <div class="Lowbox1">
+        <a href="#">
+        <img src="../Images/lowbox1.jpg">
+        </a>
+        <div class="text-top-left">Opening Day Preview</div>
+        <div class="text-bottom-right">By Alexander Baseball</div>
+        
+      </div>
+    </div>
+    <div class="col-6">
+      <a href="#">
+      <div class="Lowbox2">
+      </a>
+        <img src="../Images/lowbox2.jpg">
+        <div class="text-top-left">NBA Playoff Predictions</div>
+        <div class="text-bottom-right">By Natalie Pinky-Toe</div>
+      </div>   
+    </div>
+    <div class="row">
+      <div class="AD">
+      </div>
+      </div>
+    <div class="row">
+      <div class="col-6">
+        <h2 class="WhySU" id="header">
+          Our Mission
+        </h2>
+        <div class="mission">
+          <p class="statement">
+            Our mission is to provide sports enthusiasts with a comprehensive platform for viewing moneylines and calculating potential parlay winnings, while keeping them informed and up to date on the latest betting news.
+            We strive to deliver an exceptional user experience through a user-friendly interface and accurate, up-to-the-minute data. 
+            Our goal is to empower our users with the knowledge and tools necessary to make informed betting decisions and enhance their overall sports viewing experience.
+          </p>
+        </div>
+      </div>
+      <div class="col-6">
+        <h1 class="WhySU">
+          Sign Up Today!
+        </h2>
+        <div class="row">
+        <h4 class="reasons">
+          Stay Updated
+        </h4>
+        <span>Articles that include expert analysis on different sports, teams, players and
+          provides insights on recent performances, injury reports, and other key factors that may influence the outcome of a game.</span>
+        </div>
+        <div class="row">
+          <h4 class="reasons">
+            Bet Smarter
+          </h4>
+          <span> By seeing the odds for different games and events, bettors can get a sense of which teams or players are favored to win.
+             This information can help bettors make more strategic bets based on their own assessment of the odds.</span>
+          </div>
+          <div class="row">
+            <h4 class="reasons">
+              Win Bigger
+            </h4>
+            <span>Articles and odds can be a great resource for bettors looking to make smarter bets and potentially win more money.
+               By providing relevant data, expert analysis, and user feedback, we help bettors increase their chances of making profitable bets.</span>
+            </div>
+      </div>
+    </div>  
+  <div class="row">
+    <div class="col-8">
+      <div class="container">
+        <div class="footer">
+          <a href="" class="link" id="footerlinks">
+            Contact
+          </a>
+          <a href="" class="link" id="footerlinks">
+            About Us
+          </a>
+          <a href="" class="link" id="footerlinks">
+            FAQ
+          </a>
+          <a href="" class="link" id="footerlinks">
+            Careers
+          </a>
+      </div>
+    </div>  
+    </div> 
+    <div class="col-4">
+      <div class="socials">
+        <a style="color: #3b5998;" href="#" role="button"><i class="fa fa-facebook-f fa-lg"></i>
+        </a>
+      
+      <a style="color: #55acee;" href="#" role="button"><i class="fa fa-twitter fa-lg"></i>
+      </a>
+      
+      <a style="color: #ac2bac;" href="#" role="button"><i class="fa fa-instagram fa-lg"></i>
+      </a>
+          </div>
+        </div>
+      </div>
 </body>
 <script src="main.js" defer></script>
 </html>

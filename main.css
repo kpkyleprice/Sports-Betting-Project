@@ -15,6 +15,7 @@ html * {
 }
 .Slides:hover {
   color: rgba(148, 228, 255);
+  text-decoration: none;
 }
 .row {
   padding-top: 10px;
@@ -193,6 +194,7 @@ html * {
   width: 40%;
 }
 
+
 .text-bottom-right {
   position: absolute;
   bottom: 0;
@@ -277,4 +279,15 @@ h2.visible {
 }
 #header {
   padding-bottom: 8px;
+}
+#news {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#number {
+  text-decoration: none;
+  color: white;
+  padding-left: 10px;
 }

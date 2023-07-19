@@ -41,3 +41,5 @@ function displayGame(data) {
       infoDiv.appendChild(AwayOdds)
     }
   }
+
+  

@@ -20,7 +20,7 @@ def create_contact(current_user_token):
 
     print(f'BIG TESTER: {current_user_token.token}')
 
-    contact = Contact(name, email, make, model, year, color, user_token = user_token )
+    contact = Contact(name, email, age, sport, team, user_token = user_token )
 
     db.session.add(contact)
     db.session.commit()

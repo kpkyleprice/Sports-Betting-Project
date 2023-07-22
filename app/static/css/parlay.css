@@ -1,0 +1,54 @@
+html * {
+    margin: 0;
+  }
+.MLC {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-size: 50px;
+  }
+.AOO {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .PIB {
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+    font-style: italic;
+  }
+  .Wager {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+.container {
+    display: flex;
+    padding-top: 40px;
+}
+.first3 {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+.next3 {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+.calculator {
+    display: flex;
+    justify-content: center;
+}
+#output {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+}

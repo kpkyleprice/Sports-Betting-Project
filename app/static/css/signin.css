@@ -1,0 +1,39 @@
+.welcome {
+    color: blue;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.SIbanner {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  #number {
+    text-decoration: none;
+    color: white;
+    padding-left: 10px;
+  }
+  #SU {
+    color: white;
+    text-decoration: none;
+    padding-left: 20px;
+  }
+  .Sign {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #SO {
+    color: white;
+    text-decoration: none;
+    padding-left: 20px;
+  }
+  #prof {
+    color: white;
+    text-decoration: none;
+    padding-left: 20px;
+  }

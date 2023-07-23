@@ -1,7 +1,7 @@
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '41e8c10291mshe0a9ce8177109e1p1d8f02jsn23f16c2a1eb9',
+		'X-RapidAPI-Key': 'd83dea2089msh2b7f004262e5a69p13223ejsn0265b02d8831',
 		'X-RapidAPI-Host': 'odds.p.rapidapi.com'
 	}
 };

@@ -34,13 +34,17 @@ def nhlnews():
 def wnbanews():
     return render_template('wnbanews.html')
 
+@site.route('/boxingnews')
+def boxingnews():
+    return render_template('boxingnews.html')
+
 @site.route('/nba')
 def nba():
     return render_template('nba.html')
     
 @site.route('/nfl')
 def nfl():
-    return render_template('nflnews.html')
+    return render_template('nfl.html')
 
 @site.route('/mlb')
 def mlb():
@@ -57,6 +61,10 @@ def nhl():
 @site.route('/wnba')
 def wnba():
     return render_template('wnba.html')
+
+@site.route('/boxing')
+def boxing():
+    return render_template('boxing.html')
 
 @site.route('/calculator')
 def calculator():

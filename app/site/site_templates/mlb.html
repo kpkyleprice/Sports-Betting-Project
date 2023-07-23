@@ -6,33 +6,32 @@
     <div class="row">
         <div class="col-4">
             <h1 class="NGU">Next Game Up</h1>
-            <div id="MLB0"></div>
-            
+            <div id="info0"></div>
         </div>
         <div class="col-4">
             <h1 class="NGU">Game 2</h1>
-            <div id="MLB1"></div>
+            <div id="info1"></div>
         </div>
         <div class="col-4">
             <h1 class="NGU">Game 3</h1>
-            <div id="MLB2"></div>
+            <div id="info2"></div>
         </div>
     </div>
     <div class="row">
       <div class="col-4">
           <h1 class="NGU">Game 4</h1>
-          <div id="MLB3"></div>
+          <div id="info3"></div>
       </div>
       <div class="col-4">
           <h1 class="NGU">Game 5</h1>
-          <div id="MLB4"></div>
+          <div id="info4"></div>
       </div>
       <div class="col-4">
           <h1 class="NGU">Game 6</h1>
-          <div id="MLB5"></div>
+          <div id="info5"></div>
       </div>
   </div>
 </body>
-<script src="main.js" defer></script>
+<script src="{{ url_for('static', filename='../static/js/mlb.js') }}"></script>
 </html>
 {% endblock %}

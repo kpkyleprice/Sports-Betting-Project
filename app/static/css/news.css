@@ -10,3 +10,36 @@
     font-style: italic;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.newspic {
+    height: 50px;
+    width: 50px;
+}
+.title {
+    color: black;
+}
+.article {
+    color: black;
+}
+#wrapper {
+    padding-top: 20px
+}
+#wrapper ul {
+    padding: 0;
+    margin: auto;
+    width: 80%;
+    list-style-type: none;
+}
+
+#wrapper ul li {
+    background-color: rgb(240, 239, 239);
+    padding: 30px;
+    margin-bottom: 20px;
+    display: table;
+    width: 100%;
+}
+
+#wrapper ul li img {
+    float: left;
+}
+
+#wrapper ul li .details {float: right;width: 75%;}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="../static/css/bets.css">
+<h1 class="place">Track your bets here!</h1>
+<style>
+</style>
+<section class="text-center p-5">
+    <div class="container p-5">
+        <form method="post" action="{{ url_for('site.add_bet') }}">
+            <div>
+                <label for="Amount">Amount:</label>
+                <input type="text" id="Amount" name="Amount" required>
+            </div>
+            <div>
+                <label for="Team">Team:</label>
+                <input type="text" id="Team" name="Team" required>
+            </div>
+            <div>
+                <label for="Odds">Odds:</label>
+                <input type="text" id="Odds" name="Odds" required>
+            </div>
+            <button class="btn" type="submit">Place Bet</button>
+        </form>
+
+        <table id="profile">
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>Team</th>
+                    <th>Odds</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bet in bets %}
+                    <tr data-id="{{ bet.Amount }}">
+                        <td class="p-5">{{ bet.Amount }}</td>
+                        <td class="p-5">{{ bet.Team }}</td>
+                        <td class="p-5">{{ bet.Odds }}</td>
+                        <td class="p-5">{{ bet.id }}</td>
+                        <td class="p-3">
+                            <form method="POST" action="{{ url_for('site.delete_bet', id=bet.id) }}">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-primary">Delete</button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

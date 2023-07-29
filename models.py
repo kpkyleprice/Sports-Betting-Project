@@ -1,12 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import uuid
-from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from flask_login import LoginManager
 from flask_marshmallow import Marshmallow
 import secrets
+import uuid
 
 login_manager = LoginManager()
 ma = Marshmallow()
@@ -24,7 +23,6 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String, nullable = True, default = '')
     g_auth_verify = db.Column(db.Boolean, default = False)
     token = db.Column(db.String, default = '', unique = True)
-    data_created = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
 
     def __init__(self, email, first_name='', last_name='', password='', token='', g_auth_verify=False):
         self.id = self.set_id()
@@ -77,3 +75,29 @@ class ContactSchema(ma.Schema):
 
 contact_schema = ContactSchema()
 contacts_schema = ContactSchema(many=True)   
+
+# 
+class Bet(db.Model):
+    id = db.Column(db.String(80), primary_key=True)
+    Amount = db.Column(db.Integer(), nullable=False, default=0)
+    Team = db.Column(db.String(30))
+    Odds = db.Column(db.Integer())
+    user_id = db.Column(db.String, db.ForeignKey('user.id'), nullable=False, default='')
+
+    def __repr__(self):
+        return f'${self.Amount} has been placed on the {self.Team}'
+    
+
+    def __init__(self, Amount, Team, Odds, user_id):
+        self.id = str(uuid.uuid4())
+        self.Amount = Amount
+        self.Team = Team
+        self.Odds = Odds
+        self.user_id = user_id
+
+class BetSchema(ma.Schema):
+    class Meta:
+        fields = ['id', 'Amount','Team', 'Odds','user_id']
+
+bet_schema = BetSchema()
+bets_schema = BetSchema(many=True)

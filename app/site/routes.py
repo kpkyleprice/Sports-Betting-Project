@@ -1,4 +1,7 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, jsonify, render_template, request, redirect, url_for
+from helpers import token_required
+from models import db, User, Bet, bet_schema, bets_schema
+from flask_login import current_user, login_required
 
 site = Blueprint('site', __name__, template_folder='site_templates')
 
@@ -68,6 +71,43 @@ def boxing():
 
 @site.route('/calculator')
 def calculator():
-    return render_template('parlay.html')   
+    return render_template('parlay.html')
+   
 
-    # add news and odds pages here maybe will see if login allows links to be navigatable 
+
+
+
+@site.route("/bets")
+def Bets():
+    bets = Bet.query.all()
+    return render_template("bets.html",bets=bets)
+
+@site.route('/add_bet', methods=['POST'])
+def add_bet():
+    print('add_bet')
+    amount = request.form['Amount']
+    team = request.form['Team']
+    odds = request.form['Odds']
+    user_id = current_user.id
+
+    print(amount,team,odds,user_id)
+
+    bet = Bet(Amount=amount, Team=team, Odds=odds, user_id=user_id)
+    db.session.add(bet)
+    db.session.commit()
+    
+    return redirect(url_for('site.Bets'))
+
+@site.route('/delete_bet/<id>', methods=['POST'])
+def delete_bet(id):
+    bet = Bet.query.get(id)
+    if bet:
+        if bet.user_id == current_user.id:
+            db.session.delete(bet)
+            db.session.commit()
+            return jsonify({'message': 'Bet was successfully removed.'})
+        else: 
+            return jsonify({'message': 'You do not have permission to delete this bet.'})
+    else:
+        return jsonify({'message': 'Error bet not found.'})
+    return redirect(url_for('site.bets')) 

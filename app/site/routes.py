@@ -112,17 +112,25 @@ def delete_bet(id):
         return jsonify({'message': 'Error bet not found.'})
     return redirect(url_for('site.bets')) 
 
-@site.route('/update-bet', methods=['POST'])
-def update_bet():
-    amount = request.form['amount']
-    team = request.form['team']
-    odds = request.form['odds']
+def update_bet(id):
+    bet = Bet.query.get(id)
 
-    current_user.amount = amount
-    current_user.team = team
-    current_user.odds = odds 
+    if not bet:
+        return jsonify({'message': 'Error: Bet not found.'})
 
-    db.session.commit()
+    if bet.user_id != current_user.id:
+        return jsonify({'message': 'Error: You do not have permission to update this bet.'})
 
-    flash('Bet has updated successfully')
-    return redirect(url_for('site.bets'))
+    if request.method == 'POST':
+        amount = request.form['Amount']
+        team = request.form['Team']
+        odds = request.form['Odds']
+
+        bet.Amount = amount
+        bet.Team = team
+        bet.Odds = odds
+
+        db.session.commit()
+        return redirect(url_for('site.bets'))
+
+    return render_template('update_bets.html', bet=bet)

@@ -3,3 +3,9 @@
     justify-content: center;
     margin: 20px;
 }
+.updater {
+    padding-top: 10px;
+}
+.deleter {
+    padding-bottom: 20px;
+}

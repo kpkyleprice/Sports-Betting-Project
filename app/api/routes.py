@@ -130,3 +130,4 @@ def delete_bet(current_user_token, id):
     db.session.commit()
     response = bet_schema.dump(bet)
     return jsonify(response)
+

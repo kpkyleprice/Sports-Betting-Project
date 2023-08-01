@@ -111,3 +111,18 @@ def delete_bet(id):
     else:
         return jsonify({'message': 'Error bet not found.'})
     return redirect(url_for('site.bets')) 
+
+@site.route('/update-bet', methods=['POST'])
+def update_bet():
+    amount = request.form['amount']
+    team = request.form['team']
+    odds = request.form['odds']
+
+    current_user.amount = amount
+    current_user.team = team
+    current_user.odds = odds 
+
+    db.session.commit()
+
+    flash('Bet has updated successfully')
+    return redirect(url_for('site.bets'))

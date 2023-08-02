@@ -112,6 +112,8 @@ def delete_bet(id):
         return jsonify({'message': 'Error bet not found.'})
     return redirect(url_for('site.bets')) 
 
+
+@site.route('/update_bet/<id>', methods=['POST'])
 def update_bet(id):
     bet = Bet.query.get(id)
 
@@ -125,12 +127,14 @@ def update_bet(id):
         amount = request.form['Amount']
         team = request.form['Team']
         odds = request.form['Odds']
-
-        bet.Amount = amount
-        bet.Team = team
-        bet.Odds = odds
+# request.form causing issues werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+# KeyError: 'Amount'
+        bet.Amount = 2345
+        bet.Team = 12345
+        bet.Odds = 56788
 
         db.session.commit()
-        return redirect(url_for('site.bets'))
+        return render_template('update_bets.html', bet=bet)
+        # return redirect(url_for('site.update_bet', id=id))
 
     return render_template('update_bets.html', bet=bet)

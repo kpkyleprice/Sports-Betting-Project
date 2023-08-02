@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Update Bet</h1>
-    <form action="{{ url_for('site.update_bets', id=bet.id) }}" method="post">
+    <form action="{{ url_for('site.update_bet', id=bet.id) }}" method="POST">
         <label for="Amount">Amount:</label>
         <input type="text" name="Amount" id="Amount" value="{{ bet.Amount }}" required>
         <br>

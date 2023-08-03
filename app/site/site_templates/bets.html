@@ -47,7 +47,7 @@
                             </form>
                         </div>
                             <div class="updater">
-                            <form method="POST" action="{{ url_for('site.update_bet', id=bet.id) }}">
+                            <form method="POST" action="{{ url_for('site.show_bet', id=bet.id) }}">
                                 <input type="hidden" name="_method" value="POST">
                                 <button type="submit" class="btn btn-primary">UPDATE</button>
                             </form>
